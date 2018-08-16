@@ -1,0 +1,6114 @@
+test {
+  num_tasks: 1
+  num_buffers: 29
+  task {
+    task_id: 0
+    engine_id: DLA_0
+    network {
+      param {
+        operation_desc_index: 1
+        surface_desc_index: 2
+        dependency_graph_index: 3
+        lut_data_index: -1
+        roi_array_index: -1
+        surface_index: -1
+        op_head: -1
+        op_head: 2
+        op_head: 0
+        op_head: -1
+        op_head: -1
+        op_head: -1
+        num_rois: 1
+        num_operations: 33
+        num_luts: 0
+        num_addresses: 54
+        input_layer: 0
+        dynamic_roi: 0
+      }
+      layers {
+        layer {
+          index: 0
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 0
+          bottom {
+            index: 1
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_MC
+                address: 4
+                size: 346112
+                width: 52
+                height: 52
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 4
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_INPUT
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 5
+                size: 346112
+                width: 52
+                height: 52
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 6
+                  mem_size: 1038336
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 1
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 1
+          bottom {
+            index: 3
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          bottom {
+            index: 2
+            type: DLA_OP_CONV
+            event: OP_COMPLETED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_MC
+                address: 6
+                size: 692224
+                width: 52
+                height: 52
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 5
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_INPUT
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 7
+                size: 692224
+                width: 52
+                height: 52
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 6
+                  mem_size: 1038336
+                  offset: 346112
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+
+        layer {
+          index: 2
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 3
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 4
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 312
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 14
+              weight_bank: 2
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 21
+              input_width_csc: 52
+              input_height_csc: 22
+              input_channel_csc: 384
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 384
+              input_width_cmac: 52
+              input_height_cmac: 22
+              bytes_per_kernel: 384
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 8
+                size: 49152
+                width: 1
+                height: 1
+                channel: 384
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 8
+                  mem_size: 49152
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer100_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 49152
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 10
+                size: 1038336
+                width: 52
+                height: 22
+                channel: 384
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 6
+                  mem_size: 1038336
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 3
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 5
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 2
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 9
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 9
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer100_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 11
+                size: 346112
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 4
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 5
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 6
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 312
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 14
+              weight_bank: 2
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 21
+              input_width_csc: 52
+              input_height_csc: 22
+              input_channel_csc: 384
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 384
+              input_width_cmac: 52
+              input_height_cmac: 22
+              bytes_per_kernel: 384
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 8
+                size: 49152
+                width: 1
+                height: 1
+                channel: 384
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 8
+                  mem_size: 49152
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer100_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 49152
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 12
+                size: 1038336
+                width: 52
+                height: 22
+                channel: 384
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 6
+                  mem_size: 1038336
+                  offset: 36608
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 5
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 7
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 4
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 36608
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 9
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 9
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer100_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 13
+                size: 346112
+                width: 52
+                height: 22
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 36608
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 6
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 7
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 8
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 312
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 5
+              weight_bank: 2
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 7
+              input_width_csc: 52
+              input_height_csc: 8
+              input_channel_csc: 384
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 384
+              input_width_cmac: 52
+              input_height_cmac: 8
+              bytes_per_kernel: 384
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 8
+                size: 49152
+                width: 1
+                height: 1
+                channel: 384
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 8
+                  mem_size: 49152
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer100_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 49152
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 14
+                size: 1038336
+                width: 52
+                height: 8
+                channel: 384
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 6
+                  mem_size: 1038336
+                  offset: 73216
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 8
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 7
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 9
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 6
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 8
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 73216
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 9
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 9
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer100_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 15
+                size: 346112
+                width: 52
+                height: 8
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 73216
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 8
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 9
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 10
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 7
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 33
+              input_width_csc: 52
+              input_height_csc: 34
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 33
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 1
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 16
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 11
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer101_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 18
+                size: 346112
+                width: 52
+                height: 34
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 9
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 11
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 8
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 1
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 17
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 12
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer101_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 19
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 10
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 11
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 12
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 5
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 19
+              input_width_csc: 52
+              input_height_csc: 20
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 19
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 0
+              pad_y_bottom: 1
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 16
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 11
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer101_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 20
+                size: 346112
+                width: 52
+                height: 20
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 7
+                  mem_size: 346112
+                  offset: 53248
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 11
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 13
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 10
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 1
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 17
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 12
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer101_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 21
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 12
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 13
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 14
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 15
+              weight_bank: 1
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 35
+              input_width_csc: 52
+              input_height_csc: 36
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 36
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 22
+                size: 32768
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 14
+                  mem_size: 32768
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer102_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 32768
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 24
+                size: 692224
+                width: 52
+                height: 36
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 13
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 15
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 12
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 37
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 23
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 15
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer102_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 25
+                size: 346112
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 14
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 15
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 16
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 7
+              weight_bank: 1
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 15
+              input_width_csc: 52
+              input_height_csc: 16
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 16
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 22
+                size: 32768
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 14
+                  mem_size: 32768
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer102_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 32768
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 26
+                size: 692224
+                width: 52
+                height: 16
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 10
+                  mem_size: 692224
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 15
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 17
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 14
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 37
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 23
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 15
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer102_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 27
+                size: 346112
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 16
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 17
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 18
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 7
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 33
+              input_width_csc: 52
+              input_height_csc: 34
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 33
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 1
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 28
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 17
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer103_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 30
+                size: 346112
+                width: 52
+                height: 34
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 17
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 19
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 16
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 17617
+                truncate: 37
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 29
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 18
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer103_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 31
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 18
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 19
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 20
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 5
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 19
+              input_width_csc: 52
+              input_height_csc: 20
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 19
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 0
+              pad_y_bottom: 1
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 28
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 17
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer103_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 32
+                size: 346112
+                width: 52
+                height: 20
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 13
+                  mem_size: 346112
+                  offset: 53248
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 19
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 21
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 18
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 17617
+                truncate: 37
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 29
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 18
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer103_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 33
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 20
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 21
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 22
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 15
+              weight_bank: 1
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 35
+              input_width_csc: 52
+              input_height_csc: 36
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 36
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 34
+                size: 32768
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 20
+                  mem_size: 32768
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer104_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 32768
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 36
+                size: 692224
+                width: 52
+                height: 36
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 21
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 23
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 20
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 19097
+                truncate: 36
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 35
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 21
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer104_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 37
+                size: 346112
+                width: 52
+                height: 36
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 22
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 23
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 24
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 7
+              weight_bank: 1
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 15
+              input_width_csc: 52
+              input_height_csc: 16
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 16
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 34
+                size: 32768
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 20
+                  mem_size: 32768
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer104_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 32768
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 38
+                size: 692224
+                width: 52
+                height: 16
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 16
+                  mem_size: 692224
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 23
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 25
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 22
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 19097
+                truncate: 36
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 346112
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 35
+                size: 512
+                width: 1
+                height: 1
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 21
+                  mem_size: 512
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer104_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 512
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 39
+                size: 346112
+                width: 52
+                height: 16
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 59904
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 24
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 25
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 26
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 7
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 33
+              input_width_csc: 52
+              input_height_csc: 34
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 33
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 1
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 40
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 23
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer105_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 42
+                size: 346112
+                width: 52
+                height: 34
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 25
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 27
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 24
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 1
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 41
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 24
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer105_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 43
+                size: 692224
+                width: 52
+                height: 33
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 26
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 27
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 28
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 104
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 5
+              weight_bank: 9
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 19
+              input_width_csc: 52
+              input_height_csc: 20
+              input_channel_csc: 128
+              kernel_width_csc: 3
+              kernel_height_csc: 3
+              kernel_channel_csc: 128
+              input_width_cmac: 52
+              input_height_cmac: 19
+              bytes_per_kernel: 1152
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 1
+              pad_x_right: 1
+              pad_y_top: 0
+              pad_y_bottom: 1
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 40
+                size: 294912
+                width: 3
+                height: 3
+                channel: 128
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 23
+                  mem_size: 294912
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer105_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 294912
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 44
+                size: 346112
+                width: 52
+                height: 20
+                channel: 128
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 19
+                  mem_size: 346112
+                  offset: 53248
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 27
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 29
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 26
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 32639
+                truncate: 38
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 1
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_MUL
+                mode: SDP_OP_PER_LAYER
+                act: ACT_PRELU
+                shift_value: 0
+                truncate: 18
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 26214
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 41
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 24
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer105_bn_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 45
+                size: 692224
+                width: 52
+                height: 19
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 54912
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 28
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 29
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          bottom {
+            index: 30
+            type: DLA_OP_CONV
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 14
+              weight_bank: 2
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 33
+              input_width_csc: 52
+              input_height_csc: 34
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 34
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 46
+                size: 65536
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 26
+                  mem_size: 65536
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer106_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 65280
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 48
+                size: 692224
+                width: 52
+                height: 34
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 34
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 29
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 31
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 28
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 23
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 34
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 25
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 47
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 27
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer106_conv_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 49
+                size: 692224
+                width: 52
+                height: 34
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 25
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 30
+          roi_index: 0
+          type: DLA_OP_CONV
+          dependency_count: 2
+          bottom {
+            index: 31
+            type: DLA_OP_SDP
+            event: OP_PROGRAMMED
+          }
+          op_config {
+            conv_op {
+              conv_mode: DIRECT
+              data_reuse: 0
+              weight_reuse: 0
+              skip_data_rls: 0
+              skip_weight_rls: 0
+              entry_per_slice: 208
+              data_format: FORMAT_FEATURE
+              pixel_mapping: 0
+              fetch_grain: 1
+              pixel_offset_x: 0
+              pixel_offset_y: 0
+              gob_per_line: 0
+              gob_height: 0
+              gob_y_index: 0
+              gob_per_uv_line: 0
+              batch: 1
+              weight_format: UNCOMPRESSED
+              data_bank: 8
+              weight_bank: 2
+              batch_stride: 0
+              post_extension: 0
+              pixel_override: OVERRIDE_UINT
+              release: 17
+              input_width_csc: 52
+              input_height_csc: 18
+              input_channel_csc: 256
+              kernel_width_csc: 1
+              kernel_height_csc: 1
+              kernel_channel_csc: 256
+              input_width_cmac: 52
+              input_height_cmac: 18
+              bytes_per_kernel: 256
+              mean_ry: 0
+              mean_gu: 0
+              mean_bv: 0
+              mean_ax: 0
+              mean_format: MEAN_DISABLE
+              conv_stride_x: 1
+              conv_stride_y: 1
+              pad_x_left: 0
+              pad_x_right: 0
+              pad_y_top: 0
+              pad_y_bottom: 0
+              dilation_x: 1
+              dilation_y: 1
+              pra_truncate: 0
+              in_precision: PRECISION_INT8
+              out_precision: PRECISION_INT8
+              pad_val: 0
+              in_cvt {
+                scale: 1
+                truncate: 0
+                enable: 0
+                offset: 0
+              }
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+            }
+          }
+          surface {
+            conv_surface {
+              weight_data {
+                type: DLA_MEM_MC
+                address: 46
+                size: 65536
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 26
+                  mem_size: 65536
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/layer106_conv_dump_weight.dat"
+                      data_type: DLA_DATA_DC_WEIGHT
+                      offset: 0
+                      size: 65280
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT8
+                }
+              }
+              src_data {
+                type: DLA_MEM_MC
+                address: 50
+                size: 692224
+                width: 52
+                height: 18
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 22
+                  mem_size: 692224
+                  offset: 56576
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 52
+                height: 18
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              offset_u: 0
+              in_line_uv_stride: 0
+            }
+          }
+        }
+        layer {
+          index: 31
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 2
+          bottom {
+            index: 32
+            type: DLA_OP_SDP
+            event: OP_COMPLETED
+          }
+          fused {
+            index: 30
+            type: DLA_OP_CONV
+            event: OP_ENABLED
+          }
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 1
+                alu_type: ALU_SUM
+                type: SDP_OP_BOTH
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 23
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 692224
+                width: 52
+                height: 18
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 25
+                  mem_size: 692224
+                  offset: 56576
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_MC
+                address: 47
+                size: 1024
+                width: 1
+                height: 1
+                channel: 256
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: 27
+                  mem_size: 1024
+                  offset: 0
+                  fill_type: FILL_FILE
+                  filler {
+                    data_file {
+                      name: "yolov3_delivery_v9/yolo_dump/sdp_layer106_conv_param"
+                      data_type: DLA_DATA_BIAS
+                      offset: 0
+                      size: 1024
+                      file_type: FILE_PROTOTXT
+                    }
+                  }
+                  flag: DLA_MEM_SET
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 51
+                size: 692224
+                width: 52
+                height: 18
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 25
+                  mem_size: 692224
+                  offset: 56576
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+        layer {
+          index: 32
+          roi_index: 0
+          type: DLA_OP_SDP
+          dependency_count: 1
+          op_config {
+            sdp_op {
+              src_precision: PRECISION_INT8
+              dst_precision: PRECISION_INT8
+              lut_index: -1
+              out_cvt {
+                scale: 1
+                truncate: 0
+                enable: 1
+                offset: 0
+              }
+              conv_mode: DIRECT
+              batch_num: 1
+              batch_stride: 0
+              x1_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_KERNEL
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT16
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              x2_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+              y_op {
+                enable: 0
+                alu_type: ALU_SUM
+                type: SDP_OP_NONE
+                mode: SDP_OP_PER_LAYER
+                act: ACT_NONE
+                shift_value: 0
+                truncate: 0
+                precision: PRECISION_INT8
+                alu_operand: 0
+                mul_operand: 0
+                cvt {
+                  alu_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                  mul_cvt {
+                    scale: 0
+                    truncate: 0
+                    enable: 0
+                    offset: 0
+                  }
+                }
+              }
+            }
+          }
+          surface {
+            sdp_surface {
+              src_data {
+                type: DLA_MEM_MC
+                address: 52
+                size: 692224
+                width: 52
+                height: 52
+                channel: 256
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 25
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              x1_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT16
+                }
+              }
+              x2_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              y_data {
+                type: DLA_MEM_HW
+                address: -1
+                size: 0
+                width: 0
+                height: 0
+                channel: 0
+                line_stride: 0
+                surf_stride: 0
+                plane_stride: 0
+                mem_info {
+                  mem_id: -1
+                  mem_size: 0
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_ALLOC
+                  precision: PRECISION_INT8
+                }
+              }
+              dst_data {
+                type: DLA_MEM_MC
+                address: 53
+                size: 692224
+                width: 52
+                height: 52
+                channel: 255
+                line_stride: 1664
+                surf_stride: 86528
+                plane_stride: 0
+                mem_info {
+                  mem_id: 28
+                  mem_size: 692224
+                  offset: 0
+                  fill_type: FILL_NONE
+                  flag: DLA_MEM_OUTPUT
+                  precision: PRECISION_INT8
+                }
+              }
+            }
+          }
+        }
+      }
+      lut_list {
+      }
+      roi_list {
+        roi_arr {
+          array_length: 0
+          array_reserved: 0
+        }
+      }
+    }
+    schedule {
+      post_actions {
+        event_id: 0
+      }
+    }
+  }
+  event_list {
+    event {
+      event_id: 0
+      event_type: SYNCPOINT
+      event_flags: 0
+    }
+  }
+  slots {
+    task_id: 0
+  }
+}
